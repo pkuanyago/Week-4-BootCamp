@@ -1,15 +1,14 @@
 const http = require("http");
 const url = require("url");
 
-// Initial data
 let movies = [
   { id: 1, title: "Poetic Justice", year: 1993 },
   { id: 2, title: "Love And Basketball", year: 2000 },
 ];
 
 let series = [
-  { id: 1, title: "Stranger Things", seasons: 4 },
-  { id: 2, title: "Breaking Bad", seasons: 5 },
+  { id: 1, title: "Mr Monk", seasons: 4 },
+  { id: 2, title: "Disenchantment", seasons: 5 },
 ];
 
 let songs = [
@@ -17,7 +16,6 @@ let songs = [
   { id: 2, title: "Check The Rhime", artist: "A Tribe Called Quest" },
 ];
 
-// Helper function to get data by route
 function getData(route) {
   if (route === "/movies") return movies;
   if (route === "/series") return series;
@@ -25,7 +23,6 @@ function getData(route) {
   return null;
 }
 
-// Helper to update data
 function updateArray(route, newData) {
   if (route === "/movies") movies = newData;
   if (route === "/series") series = newData;
